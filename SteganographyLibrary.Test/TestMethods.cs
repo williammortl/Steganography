@@ -96,7 +96,7 @@
                 eh = new EmbeddingHeader(null, EmbeddingPlane.RGB, 2);
                 Assert.IsTrue(false);
             }
-            catch (SteganographyException e)
+            catch (SteganographyException)
             {
                 Assert.IsTrue(true);
             }

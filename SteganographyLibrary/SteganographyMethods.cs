@@ -401,7 +401,7 @@
                     }
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 retVal = null;
             }
