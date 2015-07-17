@@ -14,7 +14,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
-// view the internals of SteganographyLibrary.Test
+// expose the internal to unit tests
 [assembly: InternalsVisibleTo("SteganographyLibrary.Test")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
