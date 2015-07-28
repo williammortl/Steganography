@@ -459,7 +459,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.sourceFile);
             this.Controls.Add(this.mainTab);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(6);
+            this.MaximizeBox = false;
             this.Name = "MainWindow";
             this.Text = "Steganography Tool by William M Mortl";
             this.Load += new System.EventHandler(this.MainWindow_Load);
