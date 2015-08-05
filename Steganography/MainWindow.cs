@@ -49,14 +49,16 @@
         /// <param name="e">event params</param>
         private void selectSourceFile_Click(object sender, EventArgs e)
         {
-            OpenFileDialog dlg = new OpenFileDialog();
-            dlg.Filter = "Bitmap Files (.bmp)|*.bmp|PNG Files (*.png)|*.png";
-            dlg.FilterIndex = 0;
-            dlg.Multiselect = false;
-            dlg.InitialDirectory = (this.sourceFile.Text.Trim() == String.Empty) ? Environment.CurrentDirectory : Path.GetDirectoryName(this.sourceFile.Text);
-            if (dlg.ShowDialog() == DialogResult.OK)
+            using (OpenFileDialog dlg = new OpenFileDialog())
             {
-                this.sourceFile.Text = dlg.FileName;
+                dlg.Filter = "Bitmap Files (.bmp)|*.bmp|PNG Files (*.png)|*.png";
+                dlg.FilterIndex = 0;
+                dlg.Multiselect = false;
+                dlg.InitialDirectory = (this.sourceFile.Text.Trim() == String.Empty) ? Environment.CurrentDirectory : Path.GetDirectoryName(this.sourceFile.Text);
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    this.sourceFile.Text = dlg.FileName;
+                }
             }
         }
 
@@ -235,14 +237,16 @@
         /// <param name="e">event params</param>
         private void selectFileEmbed_Click(object sender, EventArgs e)
         {
-            OpenFileDialog dlg = new OpenFileDialog();
-            dlg.Filter = "All files (.*)|*.*";
-            dlg.FilterIndex = 0;
-            dlg.Multiselect = false;
-            dlg.InitialDirectory = Path.GetDirectoryName(this.sourceFile.Text);
-            if (dlg.ShowDialog() == DialogResult.OK)
+            using (OpenFileDialog dlg = new OpenFileDialog())
             {
-                this.embedFile.Text = dlg.FileName;
+                dlg.Filter = "All files (.*)|*.*";
+                dlg.FilterIndex = 0;
+                dlg.Multiselect = false;
+                dlg.InitialDirectory = Path.GetDirectoryName(this.sourceFile.Text);
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    this.embedFile.Text = dlg.FileName;
+                }
             }
         }
 
